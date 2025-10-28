@@ -1,0 +1,177 @@
+/* ========================================
+   CSS GRID ACTIVITY - FIXED & SIMPLIFIED
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* CONTAINER SETUP */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto 300px auto 150px auto;
+    gap: 15px;
+    grid-template-areas:
+        "header header header header"
+        "navbar navbar navbar navbar"
+        "sidebar main main main"
+        "sidebar article1 article2 article3"
+        "ad ad ad ad"
+        "footer footer footer footer";
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.header {
+    grid-area: header;
+    background: linear-gradient(#667eea, #764ba2);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+}
+
+.header p {
+    margin-top: 10px;
+}
+
+/* NAVBAR */
+.navbar {
+    grid-area: navbar;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #667eea;
+}
+
+/* SIDEBAR */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.sidebar h2 {
+    color: #667eea;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.sidebar li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sidebar li:hover {
+    transform: translateX(5px);
+}
+
+/* MAIN CONTENT */
+.main-content {
+    grid-area: main;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.main-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* ARTICLES */
+.article1 {
+    grid-area: article1;
+    background: linear-gradient(#f093fb, #f5576c);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.article2 {
+    grid-area: article2;
+    background: linear-gradient(#4facfe, #00f2fe);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.article3 {
+    grid-area: article3;
+    background: linear-gradient(#43e97b, #38f9d7);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ADVERTISEMENT */
+.advertisement {
+    grid-area: ad;
+    background: linear-gradient(#fa709a, #fee140);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.advertisement h3 {
+    font-size: 1.8em;
+}
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
